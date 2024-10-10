@@ -1,0 +1,21 @@
+# Diccionario para almacenar los valores de Fibonacci calculados
+fib_cache = {}
+
+def fib(n):
+    # Si el valor ya está en el diccionario, se retorna directamente
+    if n in fib_cache:
+        return fib_cache[n] 
+    # Caso base
+    if n < 2:
+        fib_cache[n] = n
+        return n  
+    # Caso recursivo, calculamos y almacenamos el resultado
+    fib_cache[n] = fib(n-1) + fib(n-2)   
+    return fib_cache[n]
+# Prueba la función con n = 8 = fib = 21 , n= 10 = Fib = 55
+print(fib(8))
+print(fib(8))
+print(fib(10))
+print(fib(10))
+#Muestra lo guardado en el diccionario
+print(fib_cache)
